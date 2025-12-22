@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple QR Generator</title>
+    <style>
+        /* Thoda styling taaki sundar dikhe */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #qr-box {
+            margin-top: 20px;
+            display: none; /* Pehle image hide rahegi */
+        }
+        img {
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>QR Code Generator</h2>
+        <p>URL ya Text likho aur button dabao!</p>
+        
+        <input type="text" id="qrText" placeholder="Enter text or URL here...">
+        <button onclick="generateQR()">Generate QR</button>
+
+        <div id="qr-box">
+            <img src="" id="qrImage" alt="QR Code">
+        </div>
+    </div>
+
+    <script>
+        function generateQR() {
+            let text = document.getElementById("qrText").value;
+            let qrBox = document.getElementById("qr-box");
+            let qrImage = document.getElementById("qrImage");
+
+            if (text.length > 0) {
+                // Hum ek free API use kar rahe hain jo text ko QR image mein badal deti hai
+                qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + text;
+                qrBox.style.display = "block";
+            } else {
+                // Agar input khali ho to user ko batao
+                document.getElementById("qrText").classList.add('error');
+                setTimeout(() => {
+                    document.getElementById("qrText").classList.remove('error');
+                }, 1000);
+                alert("Bhai kuch likho to sahi! 😅");
+            }
+        }
+    </script>
+
+</body>
+</html>
