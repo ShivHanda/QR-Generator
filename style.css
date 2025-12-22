@@ -41,11 +41,11 @@ body {
 
 /* Images Update Here */
 .bg-1 {
-    background-image: url('https://github.com/ShivHanda/QR-Generator/blob/main/bg2.jpeg'); 
+    background-image: url('https://github.com/ShivHanda/QR-Generator/blob/main/bg2.jpeg?raw=true'); 
     animation: fadeZoom 16s infinite alternate;
 }
 .bg-2 {
-    background-image: url('https://github.com/ShivHanda/QR-Generator/blob/main/bg1.jpeg'); 
+    background-image: url('https://github.com/ShivHanda/QR-Generator/blob/main/bg1.jpeg?raw=true'); 
     animation: fadeZoom 16s infinite alternate-reverse;
     opacity: 0;
 }
