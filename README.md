@@ -1,2 +1,5 @@
 # QR-Code-Generator
-Simple website that is supposed to convert URL as well as Text to QR Code
+
+https://shivhanda.github.io/QR-Generator/
+
+A simple website that converts URL as well as Text to QR Code
